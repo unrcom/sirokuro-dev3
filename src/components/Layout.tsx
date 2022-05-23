@@ -24,7 +24,7 @@ import InboxIcon from "@mui/icons-material/MoveToInbox";
 import MailIcon from "@mui/icons-material/Mail";
 import Button from "@mui/material/Button";
 
-// import styles from "./Layout.module.css";
+import styles from "./Layout.module.css";
 
 type Title = {
   title: string;
@@ -176,15 +176,12 @@ export const Layout: FC<Title> = ({ children, title = "sirokuro.site" }) => {
           // color="inherit"
           // color="default"
         >
-          {/* <DrawerHeader className={styles.Bgblack}> */}
-          <DrawerHeader className="Bgblack">
+          <DrawerHeader className={styles.Bgblack}>
             <IconButton onClick={handleDrawerClose}>
               {theme.direction === "ltr" ? (
-                // <ChevronLeftIcon className={styles.Text} />
-                <ChevronLeftIcon className="Text" />
+                <ChevronLeftIcon className={styles.Text} />
               ) : (
-                // <ChevronRightIcon className={styles.Text} />
-                <ChevronRightIcon className="Text" />
+                <ChevronRightIcon className={styles.Text} />
               )}
             </IconButton>
           </DrawerHeader>
@@ -197,12 +194,13 @@ export const Layout: FC<Title> = ({ children, title = "sirokuro.site" }) => {
               "よくある質問",
             ].map((text, index) => (
               //   <ListItem button key={text} className={styles.Bgblack}>
-              <ListItem button key={text} className="Bgblack">
+              <ListItem button key={text}>
+                {" "}
                 {/* <ListItemIcon>
                 {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
               </ListItemIcon> */}
                 {/* <ListItemText primary={text} className={styles.Text} /> */}
-                <ListItemText primary={text} className="Text" />
+                <ListItemText primary={text} />
               </ListItem>
             ))}
           </List>
@@ -237,13 +235,13 @@ export const Layout: FC<Title> = ({ children, title = "sirokuro.site" }) => {
               "ギャンブル",
             ].map((text, index) => (
               //   <ListItem button key={text} className={styles.Bgblack}>
-              <ListItem button key={text} className="Bgblack">
+              <ListItem button key={text}>
                 {" "}
                 {/* <ListItemIcon>
                 {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
               </ListItemIcon> */}
                 {/* <ListItemText primary={text} className={styles.Text} /> */}
-                <ListItemText primary={text} className="Text" />
+                <ListItemText primary={text} />
               </ListItem>
             ))}
           </List>
