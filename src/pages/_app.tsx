@@ -32,11 +32,11 @@ function MyApp({ Component, pageProps }: AppProps) {
   }, []);
 
   supabase.auth.onAuthStateChange((event, _) => {
-    if (event === "SIGNED_IN" && pathname === "/Auth") {
+    if (event === "SIGNED_IN" && pathname === "/auth") {
       push("/");
     }
-    if (event === "SIGNED_OUT" && pathname === "/Auth") {
-      push("/Auth");
+    if (event === "SIGNED_OUT" && pathname === "/auth") {
+      push("/auth");
     }
   });
   return (
