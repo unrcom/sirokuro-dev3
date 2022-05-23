@@ -155,7 +155,7 @@ export const Layout: FC<Title> = ({ children, title = "sirokuro.site" }) => {
                 <div className="Title">sirokuro.site</div>
               </Typography>
             </Link>
-            <Link href="/Auth">
+            <Link href="/auth">
               {user ? "ログアウト" : "ログイン"}
               {/* ログイン */}
             </Link>
