@@ -17,8 +17,12 @@ export const useMutateAuth = () => {
     },
     {
       onError: (err: any) => {
-        alert(err.message);
-        reset();
+        if (err.message === "Invalid login credentials") {
+          alert("指定のメールアドレスとパスワードの組み合わせは存在しません。");
+        } else {
+          alert(err.message);
+          reset();
+        }
       },
     }
   );
@@ -30,8 +34,16 @@ export const useMutateAuth = () => {
     },
     {
       onError: (err: any) => {
-        alert(err.message);
-        reset();
+        if (err.message === "Password should be at least 6 characters") {
+          alert("パスワードは６文字以上を指定してください。");
+        } else if (
+          err.message === "Unable to validate email address: invalid format"
+        ) {
+          alert("メールアドレスの書式に誤りがあります。");
+        } else {
+          alert(err.message);
+          reset();
+        }
       },
     }
   );
