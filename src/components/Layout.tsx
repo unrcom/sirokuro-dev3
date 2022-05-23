@@ -24,7 +24,7 @@ import InboxIcon from "@mui/icons-material/MoveToInbox";
 import MailIcon from "@mui/icons-material/Mail";
 import Button from "@mui/material/Button";
 
-import styles from "./Layout.module.css";
+// import styles from "./Layout.module.css";
 
 type Title = {
   title: string;
@@ -151,7 +151,8 @@ export const Layout: FC<Title> = ({ children, title = "sirokuro.site" }) => {
                 component="div"
                 sx={{ flexGrow: 1 }}
               >
-                <div className={styles.Title}>sirokuro.site</div>
+                {/* <div className={styles.Title}>sirokuro.site</div> */}
+                <div className="Title">sirokuro.site</div>
               </Typography>
             </Link>
             <Link href="/Auth">
@@ -175,12 +176,15 @@ export const Layout: FC<Title> = ({ children, title = "sirokuro.site" }) => {
           // color="inherit"
           // color="default"
         >
-          <DrawerHeader className={styles.Bgblack}>
+          {/* <DrawerHeader className={styles.Bgblack}> */}
+          <DrawerHeader className="Bgblack">
             <IconButton onClick={handleDrawerClose}>
               {theme.direction === "ltr" ? (
-                <ChevronLeftIcon className={styles.Text} />
+                // <ChevronLeftIcon className={styles.Text} />
+                <ChevronLeftIcon className="Text" />
               ) : (
-                <ChevronRightIcon className={styles.Text} />
+                // <ChevronRightIcon className={styles.Text} />
+                <ChevronRightIcon className="Text" />
               )}
             </IconButton>
           </DrawerHeader>
@@ -192,11 +196,13 @@ export const Layout: FC<Title> = ({ children, title = "sirokuro.site" }) => {
               "白黒サイトについて",
               "よくある質問",
             ].map((text, index) => (
-              <ListItem button key={text} className={styles.Bgblack}>
+              //   <ListItem button key={text} className={styles.Bgblack}>
+              <ListItem button key={text} className="Bgblack">
                 {/* <ListItemIcon>
                 {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
               </ListItemIcon> */}
-                <ListItemText primary={text} className={styles.Text} />
+                {/* <ListItemText primary={text} className={styles.Text} /> */}
+                <ListItemText primary={text} className="Text" />
               </ListItem>
             ))}
           </List>
@@ -230,26 +236,30 @@ export const Layout: FC<Title> = ({ children, title = "sirokuro.site" }) => {
               "ヘルスケア",
               "ギャンブル",
             ].map((text, index) => (
-              <ListItem button key={text} className={styles.Bgblack}>
+              //   <ListItem button key={text} className={styles.Bgblack}>
+              <ListItem button key={text} className="Bgblack">
+                {" "}
                 {/* <ListItemIcon>
                 {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
               </ListItemIcon> */}
-                <ListItemText primary={text} className={styles.Text} />
+                {/* <ListItemText primary={text} className={styles.Text} /> */}
+                <ListItemText primary={text} className="Text" />
               </ListItem>
             ))}
           </List>
         </Drawer>
         <Main>
-          <Box className={styles.LayoutMain}>
+          {/* <Box className={styles.LayoutMain}> */}
+          <Box className="LayoutMain">
+            {" "}
             <DrawerHeader />
             {children}
           </Box>
         </Main>
       </Box>
       <Box component="footer" sx={{ p: 2, bgcolor: "black" }}>
-        <div className={styles.TextWhite}>
-          Copyright ©　unremoted.com　{thisyear}.
-        </div>
+        {/* <div className={styles.TextWhite}> */}
+        <div className="TextWhite">Copyright ©　unremoted.com　{thisyear}.</div>
       </Box>
       {/* <footer className={styles.Footer}>
         <a
