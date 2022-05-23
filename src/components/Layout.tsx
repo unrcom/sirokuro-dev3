@@ -7,7 +7,6 @@ import { supabase } from "../utils/supabase";
 import { styled, useTheme } from "@mui/material/styles";
 import Box from "@mui/material/Box";
 import Drawer from "@mui/material/Drawer";
-import CssBaseline from "@mui/material/CssBaseline";
 import MuiAppBar, { AppBarProps as MuiAppBarProps } from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
 import List from "@mui/material/List";
@@ -18,11 +17,7 @@ import MenuIcon from "@mui/icons-material/Menu";
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import ListItem from "@mui/material/ListItem";
-import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
-import InboxIcon from "@mui/icons-material/MoveToInbox";
-import MailIcon from "@mui/icons-material/Mail";
-import Button from "@mui/material/Button";
 
 import styles from "./Layout.module.css";
 
@@ -82,24 +77,6 @@ const DrawerHeader = styled("div")(({ theme }) => ({
   justifyContent: "flex-end",
 }));
 
-// function Copyright() {
-//   return (
-//     <Typography variant="body2" color="white" align="center">
-//       {"Copyright © "}
-//       {/* <Button variant="text" size="large"> */}
-//       <a
-//         className={styles.Copy}
-//         href="https://unremoted.com"
-//         target="_blank"
-//         rel="noopener noreferrer"
-//       >
-//         unremoted.com
-//       </a>
-//       {new Date().getFullYear()}.
-//     </Typography>
-//   );
-// }
-
 export const Layout: FC<Title> = ({ children, title = "sirokuro.site" }) => {
   const user = supabase.auth.user();
   const { push, pathname } = useRouter();
@@ -117,22 +94,13 @@ export const Layout: FC<Title> = ({ children, title = "sirokuro.site" }) => {
 
   const thisyear = new Date().getFullYear();
 
-  // const loginBtn = () => {
-  //   push("/auth");
-  // };
-
   return (
     <>
       <Box sx={{ display: "flex" }}>
         <Head>
           <title>{title}</title>
         </Head>
-        <header>
-          {/* <nav className="w-screen bg-gray-800">
-          <div className="flex h-14 items-center pl-8"></div>
-        </nav> */}
-        </header>
-        {/* <CssBaseline /> */}
+        <header></header>
         <AppBar position="fixed" color="inherit" open={open}>
           <Toolbar>
             <IconButton
@@ -151,8 +119,7 @@ export const Layout: FC<Title> = ({ children, title = "sirokuro.site" }) => {
                 component="div"
                 sx={{ flexGrow: 1 }}
               >
-                {/* <div className={styles.Title}>sirokuro.site</div> */}
-                <div className="Title">sirokuro.site</div>
+                <div className={styles.Title}>sirokuro.site</div>
               </Typography>
             </Link>
             <Link href="/auth">
@@ -196,10 +163,6 @@ export const Layout: FC<Title> = ({ children, title = "sirokuro.site" }) => {
               //   <ListItem button key={text} className={styles.Bgblack}>
               <ListItem button key={text}>
                 {" "}
-                {/* <ListItemIcon>
-                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-              </ListItemIcon> */}
-                {/* <ListItemText primary={text} className={styles.Text} /> */}
                 <ListItemText primary={text} />
               </ListItem>
             ))}
@@ -237,9 +200,6 @@ export const Layout: FC<Title> = ({ children, title = "sirokuro.site" }) => {
               //   <ListItem button key={text} className={styles.Bgblack}>
               <ListItem button key={text}>
                 {" "}
-                {/* <ListItemIcon>
-                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-              </ListItemIcon> */}
                 {/* <ListItemText primary={text} className={styles.Text} /> */}
                 <ListItemText primary={text} />
               </ListItem>
@@ -259,16 +219,6 @@ export const Layout: FC<Title> = ({ children, title = "sirokuro.site" }) => {
           Copyright ©　unremoted.com　{thisyear}.
         </div>
       </Box>
-      {/* <footer className={styles.Footer}>
-        <a
-          className={styles.Copy}
-          href="https://unremoted.com"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          当サイトの運営: unremoted.com
-        </a>
-      </footer> */}
     </>
   );
 };
