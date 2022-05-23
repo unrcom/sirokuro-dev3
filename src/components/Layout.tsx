@@ -256,8 +256,9 @@ export const Layout: FC<Title> = ({ children, title = "sirokuro.site" }) => {
         </Main>
       </Box>
       <Box component="footer" sx={{ p: 2, bgcolor: "black" }}>
-        {/* <div className={styles.TextWhite}> */}
-        <div className="TextWhite">Copyright ©　unremoted.com　{thisyear}.</div>
+        <div className={styles.TextWhite}>
+          Copyright ©　unremoted.com　{thisyear}.
+        </div>
       </Box>
       {/* <footer className={styles.Footer}>
         <a
