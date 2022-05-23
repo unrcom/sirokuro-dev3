@@ -2,7 +2,7 @@ import React, { FC, ReactNode } from "react";
 import Head from "next/head";
 import Link from "next/link";
 import { useRouter } from "next/router";
-// import { supabase } from "../utils/supabase";
+import { supabase } from "../utils/supabase";
 
 import { styled, useTheme } from "@mui/material/styles";
 import Box from "@mui/material/Box";
@@ -101,7 +101,7 @@ const DrawerHeader = styled("div")(({ theme }) => ({
 // }
 
 export const Layout: FC<Title> = ({ children, title = "sirokuro.site" }) => {
-  //   const user = supabase.auth.user();
+  const user = supabase.auth.user();
   const { push, pathname } = useRouter();
 
   const theme = useTheme();
@@ -156,8 +156,8 @@ export const Layout: FC<Title> = ({ children, title = "sirokuro.site" }) => {
               </Typography>
             </Link>
             <Link href="/Auth">
-              {/* {user ? "ログアウト" : "ログイン"} */}
-              ログイン
+              {user ? "ログアウト" : "ログイン"}
+              {/* ログイン */}
             </Link>
           </Toolbar>
         </AppBar>
@@ -247,8 +247,7 @@ export const Layout: FC<Title> = ({ children, title = "sirokuro.site" }) => {
           </List>
         </Drawer>
         <Main>
-          {/* <Box className={styles.LayoutMain}> */}
-          <Box className="LayoutMain">
+          <Box className={styles.LayoutMain}>
             {" "}
             <DrawerHeader />
             {children}
