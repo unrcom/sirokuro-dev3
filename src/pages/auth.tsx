@@ -6,7 +6,7 @@ import { Layout } from "../components/Layout";
 import { useMutateAuth } from "../hooks/useMutateAuth";
 import { supabase } from "../utils/supabase";
 
-import styles from "./Auth.module.css";
+import styles from "./auth.module.css";
 
 const Auth: NextPage = () => {
   const user = supabase.auth.user();
