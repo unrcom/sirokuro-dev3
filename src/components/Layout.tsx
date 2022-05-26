@@ -129,91 +129,92 @@ export const Layout: FC<Title> = ({ children, title = "sirokuro.site" }) => {
             </Link>
           </Toolbar>
         </AppBar>
-        <Main className={styles.main}>
-          <Drawer
-            sx={{
+        {/* <Main className={styles.main}> */}
+        <Drawer
+          sx={{
+            width: drawerWidth,
+            flexShrink: 0,
+            "& .MuiDrawer-paper": {
               width: drawerWidth,
-              flexShrink: 0,
-              "& .MuiDrawer-paper": {
-                width: drawerWidth,
-                boxSizing: "border-box",
-              },
-            }}
-            variant="persistent"
-            anchor="left"
-            open={open}
-            // color="inherit"
-            // color="default"
-          >
-            <DrawerHeader className={styles.Bgblack}>
-              <IconButton onClick={handleDrawerClose}>
-                {theme.direction === "ltr" ? (
-                  <ChevronLeftIcon className={styles.Text} />
-                ) : (
-                  <ChevronRightIcon className={styles.Text} />
-                )}
-              </IconButton>
-            </DrawerHeader>
-            <Divider />
-            <List>
-              {[
-                "好き嫌いを投稿する",
-                "対決を投稿する",
-                "白黒サイトについて",
-                "よくある質問",
-              ].map((text, index) => (
-                <ListItem button key={text} className={styles.Bgblack}>
-                  {/* <ListItem button key={text}> */}{" "}
-                  <ListItemText primary={text} className={styles.Text} />
-                  {/* <ListItemText primary={text} /> */}
-                </ListItem>
-              ))}
-            </List>
-            <Divider className="Menu" />
-            <List>
-              {[
-                "カテゴリーを追加する [＋]",
-                "ほしい？",
-                "並ぶ？",
-                "お取り寄せ",
-                "手に入らない",
-                "人物",
-                "カルチャー",
-                "動物",
-                "アート",
-                "エンタメ",
-                "場面",
-                "場所",
-                "科学",
-                "IT",
-                "モノ",
-                "フード",
-                "サービス",
-                "SNS",
-                "企業",
-                "投資",
-                "広告",
-                "本",
-                "ゲーム",
-                "趣味",
-                "ヘルスケア",
-                "ギャンブル",
-              ].map((text, index) => (
-                //   <ListItem button key={text} className={styles.Bgblack}>
-                <ListItem button key={text}>
-                  {" "}
-                  {/* <ListItemText primary={text} className={styles.Text} /> */}
-                  <ListItemText primary={text} />
-                </ListItem>
-              ))}
-            </List>
-          </Drawer>
-          {/* <Main> */}
-          <Box className={styles.LayoutMain}>
-            {" "}
-            <DrawerHeader />
-            {children}
-          </Box>
+              boxSizing: "border-box",
+            },
+          }}
+          variant="persistent"
+          anchor="left"
+          open={open}
+          // color="inherit"
+          // color="default"
+        >
+          <DrawerHeader className={styles.Bgblack}>
+            <IconButton onClick={handleDrawerClose}>
+              {theme.direction === "ltr" ? (
+                <ChevronLeftIcon className={styles.Text} />
+              ) : (
+                <ChevronRightIcon className={styles.Text} />
+              )}
+            </IconButton>
+          </DrawerHeader>
+          <Divider />
+          <List>
+            {[
+              "好き嫌いを投稿する",
+              "対決を投稿する",
+              "白黒サイトについて",
+              "よくある質問",
+            ].map((text, index) => (
+              // <ListItem button key={text} className={styles.Bgblack}>
+              <ListItem button key={text}>
+                {" "}
+                {/* <ListItemText primary={text} className={styles.Text} /> */}
+                <ListItemText primary={text} />
+              </ListItem>
+            ))}
+          </List>
+          <Divider className="Menu" />
+          <List>
+            {[
+              "カテゴリーを追加する [＋]",
+              "ほしい？",
+              "並ぶ？",
+              "お取り寄せ",
+              "手に入らない",
+              "人物",
+              "カルチャー",
+              "動物",
+              "アート",
+              "エンタメ",
+              "場面",
+              "場所",
+              "科学",
+              "IT",
+              "モノ",
+              "フード",
+              "サービス",
+              "SNS",
+              "企業",
+              "投資",
+              "広告",
+              "本",
+              "ゲーム",
+              "趣味",
+              "ヘルスケア",
+              "ギャンブル",
+            ].map((text, index) => (
+              //   <ListItem button key={text} className={styles.Bgblack}>
+              <ListItem button key={text}>
+                {" "}
+                {/* <ListItemText primary={text} className={styles.Text} /> */}
+                <ListItemText primary={text} />
+              </ListItem>
+            ))}
+          </List>
+        </Drawer>
+        <Main className={styles.main}>
+          {/* <Box className={styles.LayoutMain}>
+            {" "} */}
+          <DrawerHeader />
+          {children}
+          {/* </Box> */}
         </Main>
         {/* </Box> */}
         <footer className={styles.footer}>

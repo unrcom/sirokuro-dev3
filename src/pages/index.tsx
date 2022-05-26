@@ -6,6 +6,7 @@ const Home: NextPage = () => {
     <Layout title="sirokuro.site">
       {/* <div className="text-center">Welcome to sirokuro.site</div> */}
       <div className="title">Welcome to sirokuro.site</div>
+      {/* <div>Welcome to sirokuro.site</div> */}
     </Layout>
   );
 };
