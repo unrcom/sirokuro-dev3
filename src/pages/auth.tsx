@@ -23,22 +23,23 @@ const Auth: NextPage = () => {
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    if (user) {
-      supabase.auth.signOut();
+    if (isLogin) {
+      loginMutation.mutate();
     } else {
-      if (isLogin) {
-        loginMutation.mutate();
-      } else {
-        registerMutation.mutate();
-      }
+      registerMutation.mutate();
     }
+  };
+
+  const signOut = async (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    supabase.auth.signOut();
   };
 
   return (
     <>
       {user ? (
         <Layout title="Auth">
-          <form onSubmit={handleSubmit}>
+          <form onSubmit={signOut}>
             <button
               type="submit"
               className={styles.SubmitButton}
